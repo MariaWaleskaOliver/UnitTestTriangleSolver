@@ -56,11 +56,36 @@ namespace TriangleTest
         [Test]
         public void CheckAllDifferenteSizes_scalene_triangle() 
         {
-            Scalene scalene = new Scalene(10, 20, 30);
+            Scalene scalene = new Scalene(10, 20, 30, 10, 20,30);
             bool expected = true;
             bool actual = scalene.checkAllSizesDifferent(10, 20, 30);
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void CheckInvalid_scalene_triangle()
+        {
+            Scalene scalene = new Scalene(10, 10, 10,10,10,10);
+            bool expected = false;
+            bool actual = scalene.checkAllSizesDifferent(10, 10, 10);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void CheckAllDifferentAngles_scalene_triangle()
+        {
+            Scalene scalene = new Scalene(10, 20, 30, 10, 20, 30);
+            bool expected = true;
+            bool actual = scalene.checkAllAnguesDifferent(5, 10, 15);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void CheckInvalidtAngles_scalene_triangle()
+        {
+            Scalene scalene = new Scalene(10, 10, 10, 10, 10, 10);
+            bool expected = false;
+            bool actual = scalene.checkAllAnguesDifferent(10, 10, 10);
+            Assert.AreEqual(expected, actual);
+        }
+
 
         [Test]
         public void verifying_zero_length()
